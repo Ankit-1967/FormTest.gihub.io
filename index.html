@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice Form Data</title>
+    <style>
+        .field {
+            margin-bottom: 10px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input[type="text"] {
+            width: 300px;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button[type="submit"] {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Practice form data </h1>
+    <form>
+        <div class="field">
+            <label for="name">Name</label>
+            <input type="text" value="Full Name" id="name">
+        </div>  
+        <div class="field">
+            <label for="village">Village</label>
+            <input type="text" value="Village" id="village">
+        </div>  
+        <div class="field">
+            <label for="distt">Distt.</label>
+            <input type="text" value="Distt" id="distt">
+        </div> 
+        <button type="submit" id="submitBtn">Submit</button> 
+    </form>
+
+    <table>
+        <thead>
+            <td>Name</td>
+        </thead>
+    </table>
+    <script>
+        document.getElementById('submitBtn').addEventListener('click', function(event) {
+            // Prevent the default form submission behavior
+            event.preventDefault();
+
+            // Get the values from the input fields
+            const nameValue = document.getElementById('name').value;
+            const villageValue = document.getElementById('village').value;
+            const disttValue = document.getElementById('distt').value;
+
+            // Log the values to the console
+            console.log('Name:', nameValue);
+            console.log('Village:', villageValue);
+            console.log('District:', disttValue);
+            let detailsBag = {
+                name: nameValue,
+                village: villageValue,
+                distt: disttValue
+            }
+            console.log(detailsBag);
+        });
+    </script>
+</body>
+</html>
